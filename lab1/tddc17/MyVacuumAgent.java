@@ -2,6 +2,7 @@ package tddc17;
 
 import aima.core.environment.liuvacuum.*;
 import aima.core.agent.Action;
+import aima.core.agent.Agent;
 import aima.core.agent.AgentProgram;
 import aima.core.agent.Percept;
 import aima.core.agent.impl.*;
@@ -105,6 +106,16 @@ class MyAgentState {
 
 }
 
+class Pair {
+	Pair(Action action, Integer i) {
+		this.action = action;
+		this.i = i;
+	}
+
+	Action action;
+	Integer i;
+}
+
 class MyAgentProgram implements AgentProgram {
 
 	private int initnialRandomActions = 10;
@@ -113,6 +124,7 @@ class MyAgentProgram implements AgentProgram {
 	// Here you can define your variables!
 	public int iterationCounter = 200;
 	public MyAgentState state = new MyAgentState();
+	public ArrayList<Pair> actionQueue = new ArrayList<Pair>();
 
 	// moves the Agent to a random start position
 	// uses percepts to update the Agent position - only the position, other
@@ -138,14 +150,14 @@ class MyAgentProgram implements AgentProgram {
 	}
 
 	public void turn_Right() {
-		state.agent_last_action = state.ACTION_TURN_RIGHT;
+		// state.agent_last_action = state.ACTION_TURN_RIGHT;
 		state.agent_direction++;
 		if (state.agent_direction > MyAgentState.WEST)
 			state.agent_direction = MyAgentState.NORTH;
 	}
 
 	public void turn_Left() {
-		state.agent_last_action = state.ACTION_TURN_LEFT;
+		// state.agent_last_action = state.ACTION_TURN_LEFT;
 		state.agent_direction--;
 		if (state.agent_direction < MyAgentState.NORTH)
 			state.agent_direction = MyAgentState.WEST;
@@ -185,39 +197,9 @@ class MyAgentProgram implements AgentProgram {
 		Boolean home = (Boolean) p.getAttribute("home");
 		System.out.println("percept: " + p);
 
-		/*
-		 * List<Vector2> visited = new ArrayList<Vector2>();
-		 * List<Vector2> queue = new ArrayList<Vector2>();
-		 * 
-		 * queue.add(new
-		 * Vector2(state.agent_x_position,state.agent_y_position).addVector2(new
-		 * Vector2(1, 0)));
-		 * queue.add(new
-		 * Vector2(state.agent_x_position,state.agent_y_position).addVector2(new
-		 * Vector2(1, 0)));
-		 * while (queue.size() > 0)
-		 * {
-		 * visited.add(queue.get(queue.size()-1));
-		 * Vector2 current = queue.remove(queue.size() -1);
-		 * 
-		 * if(!visited.contains(current))
-		 * {
-		 * if(bump)
-		 * {
-		 * 
-		 * state.agent_last_action = state.ACTION_TURN_LEFT;
-		 * return LIUVacuumEnvironment.ACTION_TURN_LEFT;
-		 * }
-		 * 
-		 * }
-		 * else
-		 * {
-		 * continue;
-		 * }
-		 * }
-		 */
 		// State update based on the percept value and the last action
 		state.updatePosition((DynamicPercept) percept);
+
 		if (bump) {
 			switch (state.agent_direction) {
 				case MyAgentState.NORTH:
@@ -239,65 +221,267 @@ class MyAgentProgram implements AgentProgram {
 		else if (!home)
 			state.updateWorld(state.agent_x_position, state.agent_y_position, state.CLEAR);
 
-		if (state.agent_last_action == state.ACTION_MOVE_FORWARD) {
+		state.printWorldDebug();
 
-			if (bump) {
-				state.agent_last_action = state.ACTION_TURN_RIGHT;
-				state.agent_direction++;
-				if (state.agent_direction > 3) {
-					state.agent_direction = 0;
-				}
-				state.printWorldDebug();
-				return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
+		if (actionQueue.size() == 0) {
+			// Find first unknown
+			CheckNeighbours(state.agent_x_position, state.agent_y_position);
 
-			}else if (dirt)
-			{
-				state.agent_last_action = state.ACTION_SUCK;
-				state.printWorldDebug();
-				return LIUVacuumEnvironment.ACTION_SUCK;
-			} 
-			else {
-				state.agent_last_action = state.ACTION_TURN_LEFT;
-				state.agent_direction--;
-				if (state.agent_direction < 0) {
-					state.agent_direction = 3;
-				}
-				state.printWorldDebug();
-				return LIUVacuumEnvironment.ACTION_TURN_LEFT;
-			}
+		}
+
+		state.agent_last_action = actionQueue.get(0).i;
+		if (state.agent_last_action == state.ACTION_TURN_LEFT) {
+			turn_Left();
+		} else if (state.agent_last_action == state.ACTION_TURN_RIGHT) {
+
+			turn_Right();
+		}
+
+		return actionQueue.remove(0).action;
+
+	}
+
+	public void CheckNeighbours(int x, int y) {
+		if (actionQueue.size() > 0 ) {
+			return;
+		}
+		if (state.world[x + 1][y] == state.UNKNOWN) {
+			AgentGoEast();
+		} else if (state.world[x - 1][y] == state.UNKNOWN) {
+			AgentGoWest();
+		} else if (state.world[x][y + 1] == state.UNKNOWN) {
+			AgentGoSouth();
+		} else if (state.world[x][y - 1] == state.UNKNOWN) {
+			AgentGoNorth();
 		} else {
-			switch (state.agent_direction) {
-				case MyAgentState.NORTH:
-					if (state.world[state.agent_x_position][state.agent_y_position - 1] != state.UNKNOWN) {
-						turn_Right();
-						return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
-					}
-					break;
-				case MyAgentState.EAST:
-					if (state.world[state.agent_x_position + 1][state.agent_y_position] != state.UNKNOWN) {
-						turn_Right();
-						return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
-					}
-					break;
-				case MyAgentState.SOUTH:
-					if (state.world[state.agent_x_position][state.agent_y_position + 1] != state.UNKNOWN) {
-						turn_Right();
-						return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
-					}
-					break;
-				case MyAgentState.WEST:
-					if (state.world[state.agent_x_position - 1][state.agent_y_position] != state.UNKNOWN) {
-						turn_Right();
-						return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
-					}
-					break;
+			System.out.println("Looking at eastern tile");
+			if (state.world[x + 1][y] != state.WALL) {
+				System.out.println("x:" + (x+1) + " y: " + (y+1));
+				CheckNeighbours(x + 1, y);
+				
+				// Fixa sen
+				switch (state.agent_direction) {
+					case MyAgentState.NORTH:
+					
+						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(1,
+						new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+						break;
+					case MyAgentState.EAST:
+					actionQueue.add(0,
+					new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+						break;
+					case MyAgentState.SOUTH:
+						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
+						actionQueue.add(1,
+								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
 
-				default:
+						break;
+					case MyAgentState.WEST:
+					actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+					actionQueue.add(1, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+					actionQueue.add(2,
+								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+								break;
+								
+					default:
 					break;
+				}
 			}
-			state.agent_last_action = state.ACTION_MOVE_FORWARD;
-			state.printWorldDebug();
-			return LIUVacuumEnvironment.ACTION_MOVE_FORWARD;
+			System.out.println("Looking at western tile");
+			if (state.world[x - 1][y] != state.WALL) {
+				CheckNeighbours(x - 1, y);
+				switch (state.agent_direction) {
+					case MyAgentState.NORTH:
+					actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
+					actionQueue.add(1,
+					new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+					break;
+					case MyAgentState.WEST:
+					actionQueue.add(0,
+								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+								break;
+					case MyAgentState.SOUTH:
+					actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+					actionQueue.add(1,
+					new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+						break;
+					case MyAgentState.EAST:
+						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(1, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(2,
+						new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+						break;
+
+					default:
+						break;
+					}
+				}
+				System.out.println("Looking at south tile");
+			if (state.world[x][y + 1] != state.WALL) {
+				CheckNeighbours(x, y + 1);
+				switch (state.agent_direction) {
+					case MyAgentState.EAST:
+						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(1,
+								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+						break;
+					case MyAgentState.SOUTH:
+						actionQueue.add(0,
+								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+						break;
+					case MyAgentState.WEST:
+						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
+						actionQueue.add(1,
+								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+						break;
+					case MyAgentState.NORTH:
+						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(1, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(2,
+								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+						break;
+
+					default:
+						break;
+				}
+			}
+			if (state.world[x][y - 1] != state.WALL) {
+				CheckNeighbours(x, y - 1);
+				switch (state.agent_direction) {
+					case MyAgentState.WEST:
+						actionQueue.add(0,new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(1,new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+						break;
+					case MyAgentState.NORTH:
+						actionQueue.add(0,new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+						break;
+					case MyAgentState.EAST:
+						actionQueue.add(0,new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
+						actionQueue.add(1,new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+						break;
+					case MyAgentState.SOUTH:
+						actionQueue.add(0,new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(1,new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+						actionQueue.add(2,new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+						break;
+
+					default:
+						break;
+				}
+			}
+		}
+
+	}
+
+	public void AgentGoEast() {
+		switch (state.agent_direction) {
+			case MyAgentState.NORTH:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+				break;
+			case MyAgentState.EAST:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+				break;
+			case MyAgentState.SOUTH:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+				break;
+			case MyAgentState.WEST:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+				break;
+
+			default:
+				break;
+		}
+	}
+
+	public void AgentGoWest() {
+		switch (state.agent_direction) {
+			case MyAgentState.NORTH:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+				break;
+			case MyAgentState.WEST:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+				break;
+			case MyAgentState.SOUTH:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+				break;
+			case MyAgentState.EAST:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+				break;
+
+			default:
+				break;
+		}
+	}
+
+	public void AgentGoSouth() {
+		switch (state.agent_direction) {
+			case MyAgentState.EAST:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+				break;
+			case MyAgentState.SOUTH:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+				break;
+			case MyAgentState.WEST:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+				break;
+			case MyAgentState.NORTH:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+				break;
+
+			default:
+				break;
+		}
+	}
+
+	public void AgentGoNorth() {
+		switch (state.agent_direction) {
+			case MyAgentState.WEST:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+				break;
+			case MyAgentState.NORTH:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+				break;
+			case MyAgentState.EAST:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+				break;
+			case MyAgentState.SOUTH:
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
+				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
+
+				break;
+
+			default:
+				break;
 		}
 	}
 }
