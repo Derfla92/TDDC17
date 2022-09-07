@@ -7,8 +7,7 @@ import aima.core.agent.AgentProgram;
 import aima.core.agent.Percept;
 import aima.core.agent.impl.*;
 
-import java.util.List;
-import java.util.Random;
+import java.lang.reflect.Array;
 import java.util.*;
 
 class Vector2 {
@@ -25,6 +24,8 @@ class Vector2 {
 		return result;
 	}
 }
+
+
 
 class MyAgentState {
 	public int[][] world = new int[30][30];
@@ -116,15 +117,19 @@ class Pair {
 	Integer i;
 }
 
+
 class MyAgentProgram implements AgentProgram {
 
 	private int initnialRandomActions = 10;
 	private Random random_generator = new Random();
 
 	// Here you can define your variables!
-	public int iterationCounter = 200;
+	public int iterationCounter = 30*30*2;
 	public MyAgentState state = new MyAgentState();
 	public ArrayList<Pair> actionQueue = new ArrayList<Pair>();
+	public ArrayList<Vector2> path = new ArrayList<Vector2>();
+	boolean go_home;
+	public int fake_direction = state.agent_direction;
 
 	// moves the Agent to a random start position
 	// uses percepts to update the Agent position - only the position, other
@@ -223,12 +228,58 @@ class MyAgentProgram implements AgentProgram {
 
 		state.printWorldDebug();
 
-		if (actionQueue.size() == 0) {
-			// Find first unknown
-			CheckNeighbours(state.agent_x_position, state.agent_y_position);
-
+		if(dirt)
+		{
+			state.agent_last_action = state.ACTION_SUCK;
+			return LIUVacuumEnvironment.ACTION_SUCK;
 		}
+		
+		if(go_home && home)
+			return NoOpAction.NO_OP;
 
+		if (actionQueue.size() == 0 ) {
+			
+			path = findPath(state.agent_x_position, state.agent_y_position);
+
+			 Vector2 fakepos = new Vector2(state.agent_x_position, state.agent_y_position);
+			 fake_direction = state.agent_direction;
+			
+			 while(path.size() > 0)
+			 {
+				 
+				 Vector2 pos = path.remove(path.size()-1);
+
+				 if(pos.x > fakepos.x)
+				 {
+					 AgentGoEast(fake_direction);
+					 fake_direction = MyAgentState.EAST;
+				 }
+					 
+				 else if(pos.x < fakepos.x)
+				 {
+					 AgentGoWest(fake_direction);
+					 fake_direction = MyAgentState.WEST;
+				 }
+					 
+				 else if(pos.y > fakepos.y)
+				 {
+					 AgentGoSouth(fake_direction);
+					 fake_direction = MyAgentState.SOUTH;
+				 }
+					 
+				 else if(pos.y < fakepos.y)
+				 {
+					 AgentGoNorth(fake_direction);
+					 fake_direction = MyAgentState.NORTH;
+				 }
+				 fakepos = new Vector2(pos.x, pos.y);
+					 
+			 }
+		}
+		
+		
+
+	
 		state.agent_last_action = actionQueue.get(0).i;
 		if (state.agent_last_action == state.ACTION_TURN_LEFT) {
 			turn_Left();
@@ -238,151 +289,98 @@ class MyAgentProgram implements AgentProgram {
 		}
 
 		return actionQueue.remove(0).action;
-
 	}
 
-	public void CheckNeighbours(int x, int y) {
-		if (actionQueue.size() > 0 ) {
-			return;
-		}
-		if (state.world[x + 1][y] == state.UNKNOWN) {
-			AgentGoEast();
-		} else if (state.world[x - 1][y] == state.UNKNOWN) {
-			AgentGoWest();
-		} else if (state.world[x][y + 1] == state.UNKNOWN) {
-			AgentGoSouth();
-		} else if (state.world[x][y - 1] == state.UNKNOWN) {
-			AgentGoNorth();
-		} else {
-			System.out.println("Looking at eastern tile");
-			if (state.world[x + 1][y] != state.WALL) {
-				System.out.println("x:" + (x+1) + " y: " + (y+1));
-				CheckNeighbours(x + 1, y);
+	public ArrayList<Vector2> findPath(int x, int y)
+	{
+		ArrayList<Vector2> neighbours = new ArrayList<Vector2>();
+		neighbours.add(new Vector2(state.agent_x_position, state.agent_y_position));
+		boolean[][] visited = new boolean[25][25];
+		Vector2[][] prev = new Vector2[27][27];
+		
+		Vector2 temp = neighbours.get(0);
+		prev[temp.x][temp.y] = null;
+		while(neighbours.size() > 0)
+		{
+			
+			
+			temp = neighbours.remove(0);
+			if(state.world[temp.x][temp.y] == state.UNKNOWN)
+				break;
+			if(go_home && state.world[temp.x][temp.y] == state.HOME && visited[temp.x][temp.y])
+				break;
+			
+			if(!visited[temp.x][temp.y])
+			{
+				visited[temp.x][temp.y] = true;
 				
-				// Fixa sen
-				switch (state.agent_direction) {
-					case MyAgentState.NORTH:
-					
-						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(1,
-						new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-						break;
-					case MyAgentState.EAST:
-					actionQueue.add(0,
-					new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-						break;
-					case MyAgentState.SOUTH:
-						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
-						actionQueue.add(1,
-								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-
-						break;
-					case MyAgentState.WEST:
-					actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-					actionQueue.add(1, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-					actionQueue.add(2,
-								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-
-								break;
-								
-					default:
-					break;
-				}
-			}
-			System.out.println("Looking at western tile");
-			if (state.world[x - 1][y] != state.WALL) {
-				CheckNeighbours(x - 1, y);
-				switch (state.agent_direction) {
-					case MyAgentState.NORTH:
-					actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
-					actionQueue.add(1,
-					new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-					break;
-					case MyAgentState.WEST:
-					actionQueue.add(0,
-								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-								break;
-					case MyAgentState.SOUTH:
-					actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-					actionQueue.add(1,
-					new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-
-						break;
-					case MyAgentState.EAST:
-						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(1, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(2,
-						new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-
-						break;
-
-					default:
+				if (!visited[temp.x + 1][temp.y] && state.world[temp.x + 1][temp.y] != state.WALL) {	
+					prev[temp.x+1][temp.y] = temp;
+					neighbours.add(new Vector2(temp.x+1, temp.y));
+					if(state.world[temp.x+1][temp.y] == state.UNKNOWN)
+					{
+						temp = neighbours.get(neighbours.size()-1);
 						break;
 					}
+						
+				} 
+				if (!visited[temp.x][temp.y + 1] && state.world[temp.x][temp.y + 1] != state.WALL) {
+	
+					prev[temp.x][temp.y+1] = temp;
+					neighbours.add(new Vector2(temp.x, temp.y+1));
+					if(state.world[temp.x][temp.y+1] == state.UNKNOWN)
+					{
+						temp = neighbours.get(neighbours.size()-1);
+						break;
+					}
+				} 
+				if(temp.x-1 >= 0)
+				{
+					if (!visited[temp.x-1][temp.y] && state.world[temp.x - 1][temp.y] != state.WALL) 
+					{
+						prev[temp.x-1][temp.y] = temp;
+						neighbours.add(new Vector2(temp.x-1, temp.y));
+						if(state.world[temp.x-1][temp.y] == state.UNKNOWN)
+					{
+						temp = neighbours.get(neighbours.size()-1);
+						break;
+					}
+					} 
 				}
-				System.out.println("Looking at south tile");
-			if (state.world[x][y + 1] != state.WALL) {
-				CheckNeighbours(x, y + 1);
-				switch (state.agent_direction) {
-					case MyAgentState.EAST:
-						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(1,
-								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-						break;
-					case MyAgentState.SOUTH:
-						actionQueue.add(0,
-								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-						break;
-					case MyAgentState.WEST:
-						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
-						actionQueue.add(1,
-								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-
-						break;
-					case MyAgentState.NORTH:
-						actionQueue.add(0, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(1, new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(2,
-								new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-
-						break;
-
-					default:
-						break;
-				}
+				if(temp.y - 1 >= 0)
+				{
+					if (!visited[temp.x][temp.y - 1]&& state.world[temp.x][temp.y - 1] != state.WALL) {
+						prev[temp.x][temp.y-1] = temp;
+						neighbours.add(new Vector2(temp.x, temp.y-1));
+						if(state.world[temp.x][temp.y-1] == state.UNKNOWN)
+						{
+							temp = neighbours.get(neighbours.size()-1);
+							break;
+						}
+					}
+				} 
+				
+				
+				
 			}
-			if (state.world[x][y - 1] != state.WALL) {
-				CheckNeighbours(x, y - 1);
-				switch (state.agent_direction) {
-					case MyAgentState.WEST:
-						actionQueue.add(0,new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(1,new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-						break;
-					case MyAgentState.NORTH:
-						actionQueue.add(0,new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-						break;
-					case MyAgentState.EAST:
-						actionQueue.add(0,new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
-						actionQueue.add(1,new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-
-						break;
-					case MyAgentState.SOUTH:
-						actionQueue.add(0,new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(1,new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
-						actionQueue.add(2,new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
-
-						break;
-
-					default:
-						break;
-				}
-			}
+			
 		}
+	
+		ArrayList<Vector2> path = new ArrayList<Vector2>();
 
+		while(prev[temp.x][temp.y] != null)
+		{
+			path.add(temp);
+			temp = prev[temp.x][temp.y];
+		}
+		if(state.world[path.get(0).x][path.get(0).y] != state.UNKNOWN)
+			go_home = true;
+		return path;
 	}
 
-	public void AgentGoEast() {
-		switch (state.agent_direction) {
+
+	public void AgentGoEast(int direction) {
+		switch (direction) {
 			case MyAgentState.NORTH:
 				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
 				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
@@ -407,8 +405,8 @@ class MyAgentProgram implements AgentProgram {
 		}
 	}
 
-	public void AgentGoWest() {
-		switch (state.agent_direction) {
+	public void AgentGoWest(int direction) {
+		switch (direction) {
 			case MyAgentState.NORTH:
 				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_LEFT, state.ACTION_TURN_LEFT));
 				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
@@ -433,8 +431,8 @@ class MyAgentProgram implements AgentProgram {
 		}
 	}
 
-	public void AgentGoSouth() {
-		switch (state.agent_direction) {
+	public void AgentGoSouth(int direction) {
+		switch (direction) {
 			case MyAgentState.EAST:
 				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
 				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
@@ -459,8 +457,8 @@ class MyAgentProgram implements AgentProgram {
 		}
 	}
 
-	public void AgentGoNorth() {
-		switch (state.agent_direction) {
+	public void AgentGoNorth(int direction) {
+		switch (direction) {
 			case MyAgentState.WEST:
 				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_TURN_RIGHT, state.ACTION_TURN_RIGHT));
 				actionQueue.add(new Pair(LIUVacuumEnvironment.ACTION_MOVE_FORWARD, state.ACTION_MOVE_FORWARD));
