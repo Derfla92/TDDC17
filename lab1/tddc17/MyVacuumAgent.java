@@ -240,41 +240,33 @@ class MyAgentProgram implements AgentProgram {
 		if (actionQueue.size() == 0 ) {
 			if(path.size() == 0)
 				path = findPath();
-
-			 //Vector2 fakepos = new Vector2(state.agent_x_position, state.agent_y_position);
-			 //fake_direction = state.agent_direction;
-			
-			 //if(path.size() > 0)
-			 //{
 				 
 				 Vector2 pos = path.remove(path.size()-1);
 
 				 if(pos.x > state.agent_x_position)
 				 {
 					 AgentGoEast(state.agent_direction);
-					 //fake_direction = MyAgentState.EAST;
+		
 				 }
 					 
 				 else if(pos.x < state.agent_x_position)
 				 {
 					 AgentGoWest(state.agent_direction);
-					 //fake_direction = MyAgentState.WEST;
+					
 				 }
 					 
 				 else if(pos.y > state.agent_y_position)
 				 {
 					 AgentGoSouth(state.agent_direction);
-					 //fake_direction = MyAgentState.SOUTH;
+				
 				 }
 					 
 				 else if(pos.y < state.agent_y_position)
 				 {
 					 AgentGoNorth(state.agent_direction);
-					 //fake_direction = MyAgentState.NORTH;
+			
 				 }
-				 //fakepos = new Vector2(pos.x, pos.y);
-					 
-			// }
+				 
 		}
 		
 		
@@ -313,17 +305,6 @@ class MyAgentProgram implements AgentProgram {
 			if(!visited[temp.x][temp.y])
 			{
 				visited[temp.x][temp.y] = true;
-				
-				if (!visited[temp.x + 1][temp.y] && state.world[temp.x + 1][temp.y] != state.WALL) {	
-					prev[temp.x+1][temp.y] = temp;
-					neighbours.add(new Vector2(temp.x+1, temp.y));
-					if(state.world[temp.x+1][temp.y] == state.UNKNOWN)
-					{
-						temp = neighbours.get(neighbours.size()-1);
-						break;
-					}
-						
-				} 
 				if (!visited[temp.x][temp.y + 1] && state.world[temp.x][temp.y + 1] != state.WALL) {
 	
 					prev[temp.x][temp.y+1] = temp;
@@ -347,6 +328,17 @@ class MyAgentProgram implements AgentProgram {
 					}
 					} 
 				}
+				if (!visited[temp.x + 1][temp.y] && state.world[temp.x + 1][temp.y] != state.WALL) {	
+					prev[temp.x+1][temp.y] = temp;
+					neighbours.add(new Vector2(temp.x+1, temp.y));
+					if(state.world[temp.x+1][temp.y] == state.UNKNOWN)
+					{
+						temp = neighbours.get(neighbours.size()-1);
+						break;
+					}
+						
+				} 
+				
 				if(temp.y - 1 >= 0)
 				{
 					if (!visited[temp.x][temp.y - 1]&& state.world[temp.x][temp.y - 1] != state.WALL) {
@@ -359,6 +351,9 @@ class MyAgentProgram implements AgentProgram {
 						}
 					}
 				} 
+				
+				
+				
 				
 				
 				
