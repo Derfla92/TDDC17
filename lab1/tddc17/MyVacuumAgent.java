@@ -91,11 +91,11 @@ class MyAgentState {
 		for (int i = 0; i < world.length; i++) {
 			for (int j = 0; j < world[i].length; j++) {
 				if (world[j][i] == UNKNOWN)
-					System.out.print(" ? ");
+					System.out.print(" X ");
 				if (world[j][i] == WALL)
 					System.out.print(" # ");
 				if (world[j][i] == CLEAR)
-					System.out.print(" . ");
+					System.out.print(" O ");
 				if (world[j][i] == DIRT)
 					System.out.print(" D ");
 				if (world[j][i] == HOME)
@@ -238,47 +238,47 @@ class MyAgentProgram implements AgentProgram {
 			return NoOpAction.NO_OP;
 
 		if (actionQueue.size() == 0 ) {
-			
-			path = findPath(state.agent_x_position, state.agent_y_position);
+			if(path.size() == 0)
+				path = findPath();
 
-			 Vector2 fakepos = new Vector2(state.agent_x_position, state.agent_y_position);
-			 fake_direction = state.agent_direction;
+			 //Vector2 fakepos = new Vector2(state.agent_x_position, state.agent_y_position);
+			 //fake_direction = state.agent_direction;
 			
-			 while(path.size() > 0)
-			 {
+			 //if(path.size() > 0)
+			 //{
 				 
 				 Vector2 pos = path.remove(path.size()-1);
 
-				 if(pos.x > fakepos.x)
+				 if(pos.x > state.agent_x_position)
 				 {
-					 AgentGoEast(fake_direction);
-					 fake_direction = MyAgentState.EAST;
+					 AgentGoEast(state.agent_direction);
+					 //fake_direction = MyAgentState.EAST;
 				 }
 					 
-				 else if(pos.x < fakepos.x)
+				 else if(pos.x < state.agent_x_position)
 				 {
-					 AgentGoWest(fake_direction);
-					 fake_direction = MyAgentState.WEST;
+					 AgentGoWest(state.agent_direction);
+					 //fake_direction = MyAgentState.WEST;
 				 }
 					 
-				 else if(pos.y > fakepos.y)
+				 else if(pos.y > state.agent_y_position)
 				 {
-					 AgentGoSouth(fake_direction);
-					 fake_direction = MyAgentState.SOUTH;
+					 AgentGoSouth(state.agent_direction);
+					 //fake_direction = MyAgentState.SOUTH;
 				 }
 					 
-				 else if(pos.y < fakepos.y)
+				 else if(pos.y < state.agent_y_position)
 				 {
-					 AgentGoNorth(fake_direction);
-					 fake_direction = MyAgentState.NORTH;
+					 AgentGoNorth(state.agent_direction);
+					 //fake_direction = MyAgentState.NORTH;
 				 }
-				 fakepos = new Vector2(pos.x, pos.y);
+				 //fakepos = new Vector2(pos.x, pos.y);
 					 
-			 }
+			// }
 		}
 		
 		
-
+	
 	
 		state.agent_last_action = actionQueue.get(0).i;
 		if (state.agent_last_action == state.ACTION_TURN_LEFT) {
@@ -291,12 +291,12 @@ class MyAgentProgram implements AgentProgram {
 		return actionQueue.remove(0).action;
 	}
 
-	public ArrayList<Vector2> findPath(int x, int y)
+	public ArrayList<Vector2> findPath()
 	{
 		ArrayList<Vector2> neighbours = new ArrayList<Vector2>();
 		neighbours.add(new Vector2(state.agent_x_position, state.agent_y_position));
-		boolean[][] visited = new boolean[25][25];
-		Vector2[][] prev = new Vector2[27][27];
+		boolean[][] visited = new boolean[30][30];
+		Vector2[][] prev = new Vector2[30][30];
 		
 		Vector2 temp = neighbours.get(0);
 		prev[temp.x][temp.y] = null;
@@ -367,14 +367,14 @@ class MyAgentProgram implements AgentProgram {
 		}
 	
 		ArrayList<Vector2> path = new ArrayList<Vector2>();
-
+		if(state.world[temp.x][temp.y] != state.UNKNOWN)
+			go_home = true;
 		while(prev[temp.x][temp.y] != null)
 		{
 			path.add(temp);
 			temp = prev[temp.x][temp.y];
 		}
-		if(state.world[path.get(0).x][path.get(0).y] != state.UNKNOWN)
-			go_home = true;
+		
 		return path;
 	}
 
