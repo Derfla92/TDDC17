@@ -43,6 +43,10 @@ public class CustomGraphSearch implements SearchObject {
 		// Implement this!
 		System.out.println("Implement CustomGraphSearch.java!");
 		
+		while(frontier.size() > 0)
+		{
+			SearchNode temp = 
+		}
 		
 		/* Some hints:
 		 * -Read early part of chapter 3 in the book!
