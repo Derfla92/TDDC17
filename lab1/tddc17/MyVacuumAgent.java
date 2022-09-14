@@ -299,7 +299,7 @@ class MyAgentProgram implements AgentProgram {
 			temp = neighbours.remove(0);
 			if(state.world[temp.x][temp.y] == state.UNKNOWN)
 				break;
-			if(go_home && state.world[temp.x][temp.y] == state.HOME && visited[temp.x][temp.y])
+			if(go_home && state.world[temp.x][temp.y] == state.HOME)
 				break;
 			
 			if(!visited[temp.x][temp.y])
@@ -315,6 +315,16 @@ class MyAgentProgram implements AgentProgram {
 						break;
 					}
 				} 
+				if (!visited[temp.x + 1][temp.y] && state.world[temp.x + 1][temp.y] != state.WALL) {	
+					prev[temp.x+1][temp.y] = temp;
+					neighbours.add(new Vector2(temp.x+1, temp.y));
+					if(state.world[temp.x+1][temp.y] == state.UNKNOWN)
+					{
+						temp = neighbours.get(neighbours.size()-1);
+						break;
+					}
+						
+				} 
 				if(temp.x-1 >= 0)
 				{
 					if (!visited[temp.x-1][temp.y] && state.world[temp.x - 1][temp.y] != state.WALL) 
@@ -328,16 +338,7 @@ class MyAgentProgram implements AgentProgram {
 					}
 					} 
 				}
-				if (!visited[temp.x + 1][temp.y] && state.world[temp.x + 1][temp.y] != state.WALL) {	
-					prev[temp.x+1][temp.y] = temp;
-					neighbours.add(new Vector2(temp.x+1, temp.y));
-					if(state.world[temp.x+1][temp.y] == state.UNKNOWN)
-					{
-						temp = neighbours.get(neighbours.size()-1);
-						break;
-					}
-						
-				} 
+				
 				
 				if(temp.y - 1 >= 0)
 				{
@@ -362,9 +363,13 @@ class MyAgentProgram implements AgentProgram {
 		}
 	
 		ArrayList<Vector2> path = new ArrayList<Vector2>();
-		if(state.world[temp.x][temp.y] != state.UNKNOWN)
+		if(state.world[temp.x][temp.y] != state.UNKNOWN && !go_home)
+		{
 			go_home = true;
-		while(prev[temp.x][temp.y] != null)
+			return new ArrayList<Vector2>(findPath());
+		}
+			
+		while(prev[temp.x][temp.y] != null )
 		{
 			path.add(temp);
 			temp = prev[temp.x][temp.y];
