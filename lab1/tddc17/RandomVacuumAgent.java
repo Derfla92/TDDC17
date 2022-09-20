@@ -12,7 +12,7 @@ import java.util.Random;
 public class RandomVacuumAgent extends AbstractAgent {
     public RandomVacuumAgent() {
 	super(new AgentProgram() {
-		public int iterationCounter = 100;
+		public int iterationCounter = 30*30*2;
 		public Action execute(Percept percept) {
 		    Random r = new Random();
 
