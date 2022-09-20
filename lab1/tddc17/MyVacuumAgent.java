@@ -10,20 +10,7 @@ import aima.core.agent.impl.*;
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Vector2 {
-	public Vector2(int x, int y) {
-		this.x = x;
-		this.y = y;
-	};
 
-	public int x;
-	public int y;
-
-	Vector2 addVector2(Vector2 add) {
-		Vector2 result = new Vector2(this.x + add.x, this.y + add.y);
-		return result;
-	}
-}
 
 
 
@@ -107,6 +94,8 @@ class MyAgentState {
 
 }
 
+
+//This is a class we constructed to be able to define a new action for the agent.
 class Pair {
 	Pair(Action action, Integer i) {
 		this.action = action;
@@ -115,6 +104,22 @@ class Pair {
 
 	Action action;
 	Integer i;
+}
+
+//This is a class we constructed to more easily handle vector addition and location of any nodes.
+class Vector2 {
+	public Vector2(int x, int y) {
+		this.x = x;
+		this.y = y;
+	};
+
+	public int x;
+	public int y;
+
+	Vector2 addVector2(Vector2 add) {
+		Vector2 result = new Vector2(this.x + add.x, this.y + add.y);
+		return result;
+	}
 }
 
 
@@ -126,10 +131,13 @@ class MyAgentProgram implements AgentProgram {
 	// Here you can define your variables!
 	public int iterationCounter = 30*30*2;
 	public MyAgentState state = new MyAgentState();
+
+	//ActionQueue is a list of actions to get to the next step in the path
 	public ArrayList<Pair> actionQueue = new ArrayList<Pair>();
+	//Path is the complete path returned by the breadth first search.
 	public ArrayList<Vector2> path = new ArrayList<Vector2>();
+	//This tells the agent to go home.
 	boolean go_home;
-	public int fake_direction = state.agent_direction;
 
 	// moves the Agent to a random start position
 	// uses percepts to update the Agent position - only the position, other
@@ -154,15 +162,17 @@ class MyAgentProgram implements AgentProgram {
 		return LIUVacuumEnvironment.ACTION_MOVE_FORWARD;
 	}
 
+
+	//Two new functions to more easily update the agents direction when turning.
+	//RIGHT
 	public void turn_Right() {
-		// state.agent_last_action = state.ACTION_TURN_RIGHT;
 		state.agent_direction++;
 		if (state.agent_direction > MyAgentState.WEST)
 			state.agent_direction = MyAgentState.NORTH;
 	}
 
+	//LEFT
 	public void turn_Left() {
-		// state.agent_last_action = state.ACTION_TURN_LEFT;
 		state.agent_direction--;
 		if (state.agent_direction < MyAgentState.NORTH)
 			state.agent_direction = MyAgentState.WEST;
@@ -228,16 +238,21 @@ class MyAgentProgram implements AgentProgram {
 
 		state.printWorldDebug();
 
+
+		//If dirt the agent sucks it up
 		if(dirt)
 		{
 			state.agent_last_action = state.ACTION_SUCK;
 			return LIUVacuumEnvironment.ACTION_SUCK;
 		}
 		
+		//If agent is home and it's done, dont do anything.
 		if(go_home && home)
 			return NoOpAction.NO_OP;
 
+		//Check if the actionQueue has any stored actions.
 		if (actionQueue.size() == 0 ) {
+			//Chcek if the agent already has a path, if not it will look for a new path using breadth first search.
 			if(path.size() == 0)
 				path = findPath();
 				 
@@ -271,7 +286,7 @@ class MyAgentProgram implements AgentProgram {
 		
 		
 	
-	
+		//Take the first action from the action queue and see if it requires the agent to turn.
 		state.agent_last_action = actionQueue.get(0).i;
 		if (state.agent_last_action == state.ACTION_TURN_LEFT) {
 			turn_Left();
@@ -280,9 +295,11 @@ class MyAgentProgram implements AgentProgram {
 			turn_Right();
 		}
 
+		//Execute the action
 		return actionQueue.remove(0).action;
 	}
 
+	//Breadth first search algorithm
 	public ArrayList<Vector2> findPath()
 	{
 		ArrayList<Vector2> neighbours = new ArrayList<Vector2>();
@@ -378,6 +395,9 @@ class MyAgentProgram implements AgentProgram {
 		return path;
 	}
 
+
+	// Following 4 functions were made to store appropriate actions for the agent to execute
+	// depending on which direction the agent is already facing.
 
 	public void AgentGoEast(int direction) {
 		switch (direction) {
