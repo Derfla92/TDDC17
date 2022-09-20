@@ -49,15 +49,30 @@ public class CustomGraphSearch implements SearchObject {
 		while (frontier.size() > 0) {
 			SearchNode current = frontier.removeFirst();
 
-			if (current.getState() == p.getGoalState()) {
-				// Finished
-				// Find path
-			}
-
 			if (!explored.contains(current)) {
 				explored.add(current);
 
+				
+				ArrayList<GridPos> childStates = p.getReachableStatesFrom(current.getState());
+				for(GridPos child : childStates)
+				{
+					SearchNode childSearch = new SearchNode(child, current);
+					if (childSearch.getState() == p.getGoalState()) {
+						path = childSearch.getPathFromRoot();
+						return path;
+					}
+					
+					if(!frontier.contains(childSearch) || !explored.contains(childSearch))
+					{
+						if(insertFront)
+							frontier.addNodeToFront(childSearch);
+						else
+							frontier.addNodeToBack(childSearch);
+					}
+				}
 			}
+
+
 		}
 
 		/*
