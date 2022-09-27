@@ -51,7 +51,6 @@ public class CustomGraphSearch implements SearchObject {
 
 			if (!explored.contains(current)) {
 				explored.add(current);
-
 				
 				ArrayList<GridPos> childStates = p.getReachableStatesFrom(current.getState());
 				for(GridPos child : childStates)
