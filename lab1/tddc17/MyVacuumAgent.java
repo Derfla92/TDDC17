@@ -369,14 +369,8 @@ class MyAgentProgram implements AgentProgram {
 						}
 					}
 				} 
-				
-				
-				
-				
-				
-				
-			}
-			
+	
+			}			
 		}
 	
 		ArrayList<Vector2> path = new ArrayList<Vector2>();
