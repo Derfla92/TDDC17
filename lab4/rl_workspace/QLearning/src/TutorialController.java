@@ -40,15 +40,7 @@ public class TutorialController extends Controller {
     public void tick(int currentTime) {
 
     	/* TODO: Insert your code here */
-		System.out.format("Angle: %.20f" + " Vx: %.20f " + " Vy: %.20f%n",angle.getValue(),vx.getValue(),vy.getValue());
-    	if(vy.getValue() < -2 )
-		{
-			middleRocket.setBursting(false);
-		}
-		if(vy.getValue() > 2)
-		{
-			middleRocket.setBursting(true);
-		}
+
     }
 
 }
