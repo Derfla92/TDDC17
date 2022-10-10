@@ -103,16 +103,11 @@ public class QLearningController extends Controller {
 			leftEngine.setBursting(true);
 	
 		}
-			
+
 		else if (action == 3)
 		{
-			// rightEngine.setBursting(true);
-			// leftEngine.setBursting(true);
 			middleEngine.setBursting(true);
 		}
-			
-
-			
 		
 	}
 
