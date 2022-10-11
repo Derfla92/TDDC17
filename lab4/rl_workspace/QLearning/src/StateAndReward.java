@@ -1,7 +1,7 @@
 public class StateAndReward {
 
 	static int angle_states = 12;
-	static int vx_states = 3;
+	static int vx_states = 2;
 	static int vy_states = 8;
 	static double max_vx = 0.5;
 	static double max_vy = 6;
