@@ -2,9 +2,9 @@ public class StateAndReward {
 
 	static int angle_states = 14;
 	static int vx_states = 2;
-	static int vy_states = 4;
-	static double max_vx = 0.1;
-	static double max_vy = 0.1;
+	static int vy_states = 8;
+	static double max_vx = 5;
+	static double max_vy = 3;
 	
 	/* State discretization function for the angle controller */
 	public static String getStateAngle(double angle, double vx, double vy) {
