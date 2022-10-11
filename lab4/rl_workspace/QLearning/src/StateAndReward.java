@@ -1,10 +1,10 @@
 public class StateAndReward {
 
-	static int angle_states = 12;
+	static int angle_states = 14;
 	static int vx_states = 2;
-	static int vy_states = 8;
-	static double max_vx = 0.5;
-	static double max_vy = 6;
+	static int vy_states = 4;
+	static double max_vx = 0.1;
+	static double max_vy = 0.1;
 	
 	/* State discretization function for the angle controller */
 	public static String getStateAngle(double angle, double vx, double vy) {
@@ -24,7 +24,7 @@ public class StateAndReward {
 		
 		double reward = 0;
 		int disc_angle = discretize(Math.abs(angle), angle_states, 0, Math.PI);
-		reward = 10/disc_angle;
+		reward = 1/Math.pow(disc_angle,2);
 		return reward;
 	}
 
@@ -50,7 +50,7 @@ public class StateAndReward {
 		double disc_vx = discretize(Math.abs(vx), vx_states, 0, max_vx);
 		double disc_vy = discretize(Math.abs(vy), vy_states, 0, max_vy);
 
-		double reward = getRewardAngle(angle, vx, vy) + 10/disc_vx + 10/disc_vy;
+		double reward = getRewardAngle(angle, vx, vy) + 1/Math.pow(disc_vx,2) + 1/Math.pow(disc_vy,2);
 
 		return reward;
 	}
