@@ -1,24 +1,18 @@
 public class StateAndReward {
 
+	static int angle_states = 14;
+	static int vx_states = 2;
+	static int vy_states = 8;
+	static double max_vx = 5;
+	static double max_vy = 3;
 	
 	/* State discretization function for the angle controller */
 	public static String getStateAngle(double angle, double vx, double vy) {
 
 		/* TODO: IMPLEMENT THIS FUNCTION */
 
-		String state = "";
-		if(angle > -0.5 && angle < 0.5)
-			state = "north";
-		else if (angle > -1.5 && angle <= -0.5)
-			state = "northwest";
-		else if(angle > -2.5 && angle <= -1.5)
-			state = "southwest";
-		else if (angle > 2.5 || angle <= -2.5)
-			state = "south";
-		else if(angle > 1.5 && angle <= 2.5)
-			state = "southeast";
-		else if (angle > 0.5 && angle <= 1.5)
-			state = "northeast";
+		int disc_angle = discretize(angle, angle_states, -Math.PI, Math.PI);
+		String state = "" + disc_angle;
 		
 		return state;
 	}
@@ -29,19 +23,8 @@ public class StateAndReward {
 		/* TODO: IMPLEMENT THIS FUNCTION */
 		
 		double reward = 0;
-		if(angle > -0.5 && angle < 0.5)
-			reward = 100;
-		else if (angle > -1.5 && angle <= -0.5)
-			reward = 0;
-		else if(angle > -2.5 && angle <= -1.5)
-			reward = 0;
-		else if (angle > 2.5 || angle <= -2.5)
-			reward = 0;
-		else if(angle > 1.5 && angle <= 2.5)
-			reward = 0;
-		else if (angle > 0.5 && angle <= 1.5)
-			reward = 0;
-
+		int disc_angle = discretize(Math.abs(angle), angle_states, 0, Math.PI);
+		reward = 1/Math.pow(disc_angle,2);
 		return reward;
 	}
 
@@ -50,7 +33,12 @@ public class StateAndReward {
 
 		/* TODO: IMPLEMENT THIS FUNCTION */
 
-		String state = "OneStateToRuleThemAll2";
+		String state = "" + getStateAngle(angle, vx, vy);
+
+		double disc_vx = discretize(vx, vx_states, -max_vx, max_vx);
+		double disc_vy = discretize(vy, vy_states, -max_vy, max_vy);
+
+		state = state + disc_vx + disc_vy;
 		
 		return state;
 	}
@@ -59,8 +47,10 @@ public class StateAndReward {
 	public static double getRewardHover(double angle, double vx, double vy) {
 
 		/* TODO: IMPLEMENT THIS FUNCTION */
-		
-		double reward = 0;
+		double disc_vx = discretize(Math.abs(vx), vx_states, 0, max_vx);
+		double disc_vy = discretize(Math.abs(vy), vy_states, 0, max_vy);
+
+		double reward = getRewardAngle(angle, vx, vy) + 1/Math.pow(disc_vx,2) + 1/Math.pow(disc_vy,2);
 
 		return reward;
 	}

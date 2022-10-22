@@ -24,7 +24,7 @@ public class QLearningController extends Controller {
 	RocketEngine middleEngine;
 	RocketEngine rightEngine;
 
-	final static int NUM_ACTIONS = 7; /* The takeAction function must be changed if this is modified */
+	final static int NUM_ACTIONS = 4; /* The takeAction function must be changed if this is modified */
 	
 	/* Keep track of the previous state and action */
 	String previous_state = null;
@@ -90,32 +90,24 @@ public class QLearningController extends Controller {
 		
 		/* TODO: IMPLEMENT THIS FUNCTION */
 		// if(action == 0)
-		// 	resetRockets();
+		resetRockets();
 
 		 if (action == 1)
 		 {
 			rightEngine.setBursting(true);
-			leftEngine.setBursting(false);
+			
 		 }
 			
 		else if (action == 2)
 		{
 			leftEngine.setBursting(true);
-			rightEngine.setBursting(false);
+	
 		}
-			
-		//else if (action == 3)
-		//	middleEngine.setBursting(true);
-			
-		else if (action == 4)
-			rightEngine.setBursting(false);
-			
-		else if (action == 5)
-			leftEngine.setBursting(false);
-			
-		// else if (action == 6)
-		// 	middleEngine.setBursting(false);
-			
+
+		else if (action == 3)
+		{
+			middleEngine.setBursting(true);
+		}
 		
 	}
 
@@ -124,14 +116,14 @@ public class QLearningController extends Controller {
 		iteration++;
 		
 		if (!paused) {
-			String new_state = StateAndReward.getStateAngle(angle.getValue(), vx.getValue(), vy.getValue());
+			String new_state = StateAndReward.getStateHover(angle.getValue(), vx.getValue(), vy.getValue());
 
 			/* Repeat the chosen action for a while, hoping to reach a new state. This is a trick to speed up learning on this problem. */
 			action_counter++;
 			if (new_state.equals(previous_state) && action_counter < REPEAT_ACTION_MAX) {
 				return;
 			}
-			double previous_reward = StateAndReward.getRewardAngle(previous_angle, previous_vx, previous_vy);
+			double previous_reward = StateAndReward.getRewardHover(previous_angle, previous_vx, previous_vy);
 			action_counter = 0;
 
 			/* The agent is in a new state, do learning and action selection */
@@ -234,7 +226,7 @@ public class QLearningController extends Controller {
 				
 			}
 		}
-		System.out.println(action);
+		//System.out.println(action);
 		return action;
 	}
 
