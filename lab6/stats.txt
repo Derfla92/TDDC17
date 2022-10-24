@@ -1,0 +1,615 @@
+{"act": "begin_group", "ts": 0}
+{"act": "open_list_sorting", "key_list": ["h_SINGLE", "h_(", "h_ff", "h_INSERTION_ORDER", "h_)"]}
+{"ts":0, "act": "state_update", "state_id": 0, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "g": -1, "real_g": -1}
+{"ts": 0, "act": "evaluated_states", "state_id": 0, "preferred": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 0}
+{"ts":0, "act": "state_update", "state_id": 0, "h_ff": 12}
+{"ts": 0, "act": "evaluated_heuristics", "count": 1}
+{"act": "preferred_heuristics", "key_list": []}
+{"act": "main_heuristic", "target": "h_ff"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 1}
+{"ts":1, "act": "state_update", "state_id": 0, "g": 0, "real_g": 0}
+{"ts": 1, "act": "expanded_states", "state_id": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 1}
+{"ts":1, "act": "state_update", "state_id": 1, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [0, "move roomc roomb shakey doorb", 1]}
+{"ts": 1, "act": "generated_states", "state_id": 0, "op": "move roomc roomb shakey doorb"}
+{"ts":1, "act": "state_update", "state_id": 1, "g": -1, "real_g": -1}
+{"ts": 1, "act": "evaluated_states", "state_id": 1, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 1}
+{"ts":1, "act": "state_update", "state_id": 1, "h_ff": 12}
+{"ts": 1, "act": "evaluated_heuristics", "count": 1}
+{"ts": 1, "act": "generated_states", "state_id": 0, "op": "move roomc roomb shakey doorc"}
+{"ts":1, "act": "state_update", "state_id": 1, "g": 1, "real_g": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts": 2, "act": "expanded_states", "state_id": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 2, "state": {"var0": "0(Atom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [1, "climbonbox box roomb shakey", 1]}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "climbonbox box roomb shakey"}
+{"ts":2, "act": "state_update", "state_id": 2, "g": -1, "real_g": -1}
+{"ts": 2, "act": "evaluated_states", "state_id": 2, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 2, "h_ff": 12}
+{"ts": 2, "act": "evaluated_heuristics", "count": 1}
+{"ts":2, "act": "state_update", "state_id": 3, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [1, "movewithbox box roomb rooma doora shakey", 1]}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "movewithbox box roomb rooma doora shakey"}
+{"ts":2, "act": "state_update", "state_id": 3, "g": -1, "real_g": -1}
+{"ts": 2, "act": "evaluated_states", "state_id": 3, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 3, "h_ff": 12}
+{"ts": 2, "act": "evaluated_heuristics", "count": 1}
+{"ts":2, "act": "state_update", "state_id": 4, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [1, "movewithbox box roomb roomc doorc shakey", 1]}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "movewithbox box roomb roomc doorc shakey"}
+{"ts":2, "act": "state_update", "state_id": 4, "g": -1, "real_g": -1}
+{"ts": 2, "act": "evaluated_states", "state_id": 4, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 4, "h_ff": 13}
+{"ts": 2, "act": "evaluated_heuristics", "count": 1}
+{"ts":2, "act": "state_update", "state_id": 5, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [1, "push_box_to_light_switch box light_switchb roomb shakey", 1]}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "push_box_to_light_switch box light_switchb roomb shakey"}
+{"ts":2, "act": "state_update", "state_id": 5, "g": -1, "real_g": -1}
+{"ts": 2, "act": "evaluated_states", "state_id": 5, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 5, "h_ff": 11}
+{"ts": 2, "act": "evaluated_heuristics", "count": 1}
+{"ts":2, "act": "state_update", "state_id": 6, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [1, "move roomb rooma shakey doora", 1]}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "move roomb rooma shakey doora"}
+{"ts":2, "act": "state_update", "state_id": 6, "g": -1, "real_g": -1}
+{"ts": 2, "act": "evaluated_states", "state_id": 6, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 6, "h_ff": 12}
+{"ts": 2, "act": "evaluated_heuristics", "count": 1}
+{"ts":2, "act": "state_update", "state_id": 0, "new_parent": [1, "move roomb roomc shakey doorb", 1]}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "move roomb roomc shakey doorb"}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "move roomb roomc shakey doorc"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts":3, "act": "state_update", "state_id": 5, "g": 2, "real_g": 2}
+{"ts": 3, "act": "expanded_states", "state_id": 5}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts":3, "act": "state_update", "state_id": 7, "state": {"var0": "0(Atom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [5, "climbonbox box roomb shakey", 1]}
+{"ts": 3, "act": "generated_states", "state_id": 5, "op": "climbonbox box roomb shakey"}
+{"ts":3, "act": "state_update", "state_id": 7, "g": -1, "real_g": -1}
+{"ts": 3, "act": "evaluated_states", "state_id": 7, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts":3, "act": "state_update", "state_id": 7, "h_ff": 11}
+{"ts": 3, "act": "evaluated_heuristics", "count": 1}
+{"ts":3, "act": "state_update", "state_id": 3, "new_parent": [5, "movewithbox box roomb rooma doora shakey", 1]}
+{"ts": 3, "act": "generated_states", "state_id": 5, "op": "movewithbox box roomb rooma doora shakey"}
+{"ts":3, "act": "state_update", "state_id": 3, "g": 2, "real_g": 2}
+{"ts":3, "act": "state_update", "state_id": 4, "new_parent": [5, "movewithbox box roomb roomc doorc shakey", 1]}
+{"ts": 3, "act": "generated_states", "state_id": 5, "op": "movewithbox box roomb roomc doorc shakey"}
+{"ts":3, "act": "state_update", "state_id": 4, "g": 2, "real_g": 2}
+{"ts":3, "act": "state_update", "state_id": 8, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [5, "move roomb rooma shakey doora", 1]}
+{"ts": 3, "act": "generated_states", "state_id": 5, "op": "move roomb rooma shakey doora"}
+{"ts":3, "act": "state_update", "state_id": 8, "g": -1, "real_g": -1}
+{"ts": 3, "act": "evaluated_states", "state_id": 8, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts":3, "act": "state_update", "state_id": 8, "h_ff": 11}
+{"ts": 3, "act": "evaluated_heuristics", "count": 1}
+{"ts":3, "act": "state_update", "state_id": 9, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "1(NegatedAtom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [5, "move roomb roomc shakey doorb", 1]}
+{"ts": 3, "act": "generated_states", "state_id": 5, "op": "move roomb roomc shakey doorb"}
+{"ts":3, "act": "state_update", "state_id": 9, "g": -1, "real_g": -1}
+{"ts": 3, "act": "evaluated_states", "state_id": 9, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts":3, "act": "state_update", "state_id": 9, "h_ff": 11}
+{"ts": 3, "act": "evaluated_heuristics", "count": 1}
+{"ts": 3, "act": "generated_states", "state_id": 5, "op": "move roomb roomc shakey doorc"}
+{"ts":3, "act": "state_update", "state_id": 9, "g": 3, "real_g": 3}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 4}
+{"ts":4, "act": "state_update", "state_id": 7, "g": 3, "real_g": 3}
+{"ts": 4, "act": "expanded_states", "state_id": 7}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 4}
+{"ts":4, "act": "state_update", "state_id": 5, "new_parent": [7, "climboffbox shakey", 1]}
+{"ts": 4, "act": "generated_states", "state_id": 7, "op": "climboffbox shakey"}
+{"ts":4, "act": "state_update", "state_id": 10, "state": {"var0": "0(Atom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [7, "switch_light_on box shakey roomb", 1]}
+{"ts": 4, "act": "generated_states", "state_id": 7, "op": "switch_light_on box shakey roomb"}
+{"ts":4, "act": "state_update", "state_id": 10, "g": -1, "real_g": -1}
+{"ts": 4, "act": "evaluated_states", "state_id": 10, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 4}
+{"ts":4, "act": "state_update", "state_id": 10, "h_ff": 10}
+{"ts": 4, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 10, "g": 4, "real_g": 4}
+{"ts": 5, "act": "expanded_states", "state_id": 10}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 11, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [10, "climboffbox shakey", 1]}
+{"ts": 5, "act": "generated_states", "state_id": 10, "op": "climboffbox shakey"}
+{"ts":5, "act": "state_update", "state_id": 11, "g": -1, "real_g": -1}
+{"ts": 5, "act": "evaluated_states", "state_id": 11, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 11, "h_ff": 10}
+{"ts": 5, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 11, "g": 5, "real_g": 5}
+{"ts": 6, "act": "expanded_states", "state_id": 11}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 10, "new_parent": [11, "climbonbox box roomb shakey", 1]}
+{"ts": 6, "act": "generated_states", "state_id": 11, "op": "climbonbox box roomb shakey"}
+{"ts":6, "act": "state_update", "state_id": 12, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [11, "movewithbox box roomb rooma doora shakey", 1]}
+{"ts": 6, "act": "generated_states", "state_id": 11, "op": "movewithbox box roomb rooma doora shakey"}
+{"ts":6, "act": "state_update", "state_id": 12, "g": -1, "real_g": -1}
+{"ts": 6, "act": "evaluated_states", "state_id": 12, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 12, "h_ff": 9}
+{"ts": 6, "act": "evaluated_heuristics", "count": 1}
+{"ts":6, "act": "state_update", "state_id": 13, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [11, "movewithbox box roomb roomc doorc shakey", 1]}
+{"ts": 6, "act": "generated_states", "state_id": 11, "op": "movewithbox box roomb roomc doorc shakey"}
+{"ts":6, "act": "state_update", "state_id": 13, "g": -1, "real_g": -1}
+{"ts": 6, "act": "evaluated_states", "state_id": 13, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 13, "h_ff": 11}
+{"ts": 6, "act": "evaluated_heuristics", "count": 1}
+{"ts":6, "act": "state_update", "state_id": 14, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [11, "move roomb rooma shakey doora", 1]}
+{"ts": 6, "act": "generated_states", "state_id": 11, "op": "move roomb rooma shakey doora"}
+{"ts":6, "act": "state_update", "state_id": 14, "g": -1, "real_g": -1}
+{"ts": 6, "act": "evaluated_states", "state_id": 14, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 14, "h_ff": 10}
+{"ts": 6, "act": "evaluated_heuristics", "count": 1}
+{"ts":6, "act": "state_update", "state_id": 15, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [11, "move roomb roomc shakey doorb", 1]}
+{"ts": 6, "act": "generated_states", "state_id": 11, "op": "move roomb roomc shakey doorb"}
+{"ts":6, "act": "state_update", "state_id": 15, "g": -1, "real_g": -1}
+{"ts": 6, "act": "evaluated_states", "state_id": 15, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 15, "h_ff": 10}
+{"ts": 6, "act": "evaluated_heuristics", "count": 1}
+{"ts": 6, "act": "generated_states", "state_id": 11, "op": "move roomb roomc shakey doorc"}
+{"ts":6, "act": "state_update", "state_id": 15, "g": 6, "real_g": 6}
+{"ts":6, "act": "state_update", "state_id": 16, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "2(Atom gripper-holding(grippera, objectb))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [11, "pickup_object grippera objectb roomb shakey", 1]}
+{"ts": 6, "act": "generated_states", "state_id": 11, "op": "pickup_object grippera objectb roomb shakey"}
+{"ts":6, "act": "state_update", "state_id": 16, "g": -1, "real_g": -1}
+{"ts": 6, "act": "evaluated_states", "state_id": 16, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 16, "h_ff": 9}
+{"ts": 6, "act": "evaluated_heuristics", "count": 1}
+{"ts":6, "act": "state_update", "state_id": 17, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [11, "pickup_object gripperb objectb roomb shakey", 1]}
+{"ts": 6, "act": "generated_states", "state_id": 11, "op": "pickup_object gripperb objectb roomb shakey"}
+{"ts":6, "act": "state_update", "state_id": 17, "g": -1, "real_g": -1}
+{"ts": 6, "act": "evaluated_states", "state_id": 17, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 17, "h_ff": 9}
+{"ts": 6, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 12, "g": 6, "real_g": 6}
+{"ts": 7, "act": "expanded_states", "state_id": 12}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 18, "state": {"var0": "0(Atom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [12, "climbonbox box rooma shakey", 1]}
+{"ts": 7, "act": "generated_states", "state_id": 12, "op": "climbonbox box rooma shakey"}
+{"ts":7, "act": "state_update", "state_id": 18, "g": -1, "real_g": -1}
+{"ts": 7, "act": "evaluated_states", "state_id": 18, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 18, "h_ff": 9}
+{"ts": 7, "act": "evaluated_heuristics", "count": 1}
+{"ts":7, "act": "state_update", "state_id": 19, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [12, "movewithbox box rooma roomb doora shakey", 1]}
+{"ts": 7, "act": "generated_states", "state_id": 12, "op": "movewithbox box rooma roomb doora shakey"}
+{"ts":7, "act": "state_update", "state_id": 19, "g": -1, "real_g": -1}
+{"ts": 7, "act": "evaluated_states", "state_id": 19, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 19, "h_ff": 10}
+{"ts": 7, "act": "evaluated_heuristics", "count": 1}
+{"ts":7, "act": "state_update", "state_id": 20, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [12, "push_box_to_light_switch box light_switcha rooma shakey", 1]}
+{"ts": 7, "act": "generated_states", "state_id": 12, "op": "push_box_to_light_switch box light_switcha rooma shakey"}
+{"ts":7, "act": "state_update", "state_id": 20, "g": -1, "real_g": -1}
+{"ts": 7, "act": "evaluated_states", "state_id": 20, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 20, "h_ff": 8}
+{"ts": 7, "act": "evaluated_heuristics", "count": 1}
+{"ts":7, "act": "state_update", "state_id": 21, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [12, "move rooma roomb shakey doora", 1]}
+{"ts": 7, "act": "generated_states", "state_id": 12, "op": "move rooma roomb shakey doora"}
+{"ts":7, "act": "state_update", "state_id": 21, "g": -1, "real_g": -1}
+{"ts": 7, "act": "evaluated_states", "state_id": 21, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 21, "h_ff": 9}
+{"ts": 7, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 8}
+{"ts":8, "act": "state_update", "state_id": 20, "g": 7, "real_g": 7}
+{"ts": 8, "act": "expanded_states", "state_id": 20}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 8}
+{"ts":8, "act": "state_update", "state_id": 22, "state": {"var0": "0(Atom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [20, "climbonbox box rooma shakey", 1]}
+{"ts": 8, "act": "generated_states", "state_id": 20, "op": "climbonbox box rooma shakey"}
+{"ts":8, "act": "state_update", "state_id": 22, "g": -1, "real_g": -1}
+{"ts": 8, "act": "evaluated_states", "state_id": 22, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 8}
+{"ts":8, "act": "state_update", "state_id": 22, "h_ff": 8}
+{"ts": 8, "act": "evaluated_heuristics", "count": 1}
+{"ts":8, "act": "state_update", "state_id": 19, "new_parent": [20, "movewithbox box rooma roomb doora shakey", 1]}
+{"ts": 8, "act": "generated_states", "state_id": 20, "op": "movewithbox box rooma roomb doora shakey"}
+{"ts":8, "act": "state_update", "state_id": 19, "g": 7, "real_g": 7}
+{"ts":8, "act": "state_update", "state_id": 23, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "1(NegatedAtom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [20, "move rooma roomb shakey doora", 1]}
+{"ts": 8, "act": "generated_states", "state_id": 20, "op": "move rooma roomb shakey doora"}
+{"ts":8, "act": "state_update", "state_id": 23, "g": -1, "real_g": -1}
+{"ts": 8, "act": "evaluated_states", "state_id": 23, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 8}
+{"ts":8, "act": "state_update", "state_id": 23, "h_ff": 8}
+{"ts": 8, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 9}
+{"ts":9, "act": "state_update", "state_id": 22, "g": 8, "real_g": 8}
+{"ts": 9, "act": "expanded_states", "state_id": 22}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 9}
+{"ts":9, "act": "state_update", "state_id": 20, "new_parent": [22, "climboffbox shakey", 1]}
+{"ts": 9, "act": "generated_states", "state_id": 22, "op": "climboffbox shakey"}
+{"ts":9, "act": "state_update", "state_id": 24, "state": {"var0": "0(Atom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [22, "switch_light_on box shakey rooma", 1]}
+{"ts": 9, "act": "generated_states", "state_id": 22, "op": "switch_light_on box shakey rooma"}
+{"ts":9, "act": "state_update", "state_id": 24, "g": -1, "real_g": -1}
+{"ts": 9, "act": "evaluated_states", "state_id": 24, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 9}
+{"ts":9, "act": "state_update", "state_id": 24, "h_ff": 7}
+{"ts": 9, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 10}
+{"ts":10, "act": "state_update", "state_id": 24, "g": 9, "real_g": 9}
+{"ts": 10, "act": "expanded_states", "state_id": 24}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 10}
+{"ts":10, "act": "state_update", "state_id": 25, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [24, "climboffbox shakey", 1]}
+{"ts": 10, "act": "generated_states", "state_id": 24, "op": "climboffbox shakey"}
+{"ts":10, "act": "state_update", "state_id": 25, "g": -1, "real_g": -1}
+{"ts": 10, "act": "evaluated_states", "state_id": 25, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 10}
+{"ts":10, "act": "state_update", "state_id": 25, "h_ff": 6}
+{"ts": 10, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 25, "g": 10, "real_g": 10}
+{"ts": 11, "act": "expanded_states", "state_id": 25}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 24, "new_parent": [25, "climbonbox box rooma shakey", 1]}
+{"ts": 11, "act": "generated_states", "state_id": 25, "op": "climbonbox box rooma shakey"}
+{"ts":11, "act": "state_update", "state_id": 26, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [25, "movewithbox box rooma roomb doora shakey", 1]}
+{"ts": 11, "act": "generated_states", "state_id": 25, "op": "movewithbox box rooma roomb doora shakey"}
+{"ts":11, "act": "state_update", "state_id": 26, "g": -1, "real_g": -1}
+{"ts": 11, "act": "evaluated_states", "state_id": 26, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 26, "h_ff": 6}
+{"ts": 11, "act": "evaluated_heuristics", "count": 1}
+{"ts":11, "act": "state_update", "state_id": 27, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [25, "move rooma roomb shakey doora", 1]}
+{"ts": 11, "act": "generated_states", "state_id": 25, "op": "move rooma roomb shakey doora"}
+{"ts":11, "act": "state_update", "state_id": 27, "g": -1, "real_g": -1}
+{"ts": 11, "act": "evaluated_states", "state_id": 27, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 27, "h_ff": 6}
+{"ts": 11, "act": "evaluated_heuristics", "count": 1}
+{"ts":11, "act": "state_update", "state_id": 28, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [25, "pickup_object grippera objecta rooma shakey", 1]}
+{"ts": 11, "act": "generated_states", "state_id": 25, "op": "pickup_object grippera objecta rooma shakey"}
+{"ts":11, "act": "state_update", "state_id": 28, "g": -1, "real_g": -1}
+{"ts": 11, "act": "evaluated_states", "state_id": 28, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 28, "h_ff": 5}
+{"ts": 11, "act": "evaluated_heuristics", "count": 1}
+{"ts":11, "act": "state_update", "state_id": 29, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "1(Atom gripper-holding(gripperb, objecta))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [25, "pickup_object gripperb objecta rooma shakey", 1]}
+{"ts": 11, "act": "generated_states", "state_id": 25, "op": "pickup_object gripperb objecta rooma shakey"}
+{"ts":11, "act": "state_update", "state_id": 29, "g": -1, "real_g": -1}
+{"ts": 11, "act": "evaluated_states", "state_id": 29, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 29, "h_ff": 5}
+{"ts": 11, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 28, "g": 11, "real_g": 11}
+{"ts": 12, "act": "expanded_states", "state_id": 28}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 30, "state": {"var0": "0(Atom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [28, "climbonbox box rooma shakey", 1]}
+{"ts": 12, "act": "generated_states", "state_id": 28, "op": "climbonbox box rooma shakey"}
+{"ts":12, "act": "state_update", "state_id": 30, "g": -1, "real_g": -1}
+{"ts": 12, "act": "evaluated_states", "state_id": 30, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 30, "h_ff": 6}
+{"ts": 12, "act": "evaluated_heuristics", "count": 1}
+{"ts":12, "act": "state_update", "state_id": 31, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [28, "movewithbox box rooma roomb doora shakey", 1]}
+{"ts": 12, "act": "generated_states", "state_id": 28, "op": "movewithbox box rooma roomb doora shakey"}
+{"ts":12, "act": "state_update", "state_id": 31, "g": -1, "real_g": -1}
+{"ts": 12, "act": "evaluated_states", "state_id": 31, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 31, "h_ff": 4}
+{"ts": 12, "act": "evaluated_heuristics", "count": 1}
+{"ts":12, "act": "state_update", "state_id": 32, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [28, "move rooma roomb shakey doora", 1]}
+{"ts": 12, "act": "generated_states", "state_id": 28, "op": "move rooma roomb shakey doora"}
+{"ts":12, "act": "state_update", "state_id": 32, "g": -1, "real_g": -1}
+{"ts": 12, "act": "evaluated_states", "state_id": 32, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 32, "h_ff": 4}
+{"ts": 12, "act": "evaluated_heuristics", "count": 1}
+{"ts":12, "act": "state_update", "state_id": 33, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "0(Atom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "1(Atom gripper-holding(gripperb, objecta))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [28, "pickup_object gripperb objecta rooma shakey", 1]}
+{"ts": 12, "act": "generated_states", "state_id": 28, "op": "pickup_object gripperb objecta rooma shakey"}
+{"ts":12, "act": "state_update", "state_id": 33, "g": -1, "real_g": -1}
+{"ts": 12, "act": "evaluated_states", "state_id": 33, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 33, "h_ff": 6}
+{"ts": 12, "act": "evaluated_heuristics", "count": 1}
+{"ts":12, "act": "state_update", "state_id": 25, "new_parent": [28, "drop_object grippera objecta rooma shakey", 1]}
+{"ts": 12, "act": "generated_states", "state_id": 28, "op": "drop_object grippera objecta rooma shakey"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 31, "g": 12, "real_g": 12}
+{"ts": 13, "act": "expanded_states", "state_id": 31}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 34, "state": {"var0": "0(Atom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [31, "climbonbox box roomb shakey", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "climbonbox box roomb shakey"}
+{"ts":13, "act": "state_update", "state_id": 34, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 34, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 34, "h_ff": 5}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"ts":13, "act": "state_update", "state_id": 35, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [31, "movewithbox box roomb rooma doora shakey", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "movewithbox box roomb rooma doora shakey"}
+{"ts":13, "act": "state_update", "state_id": 35, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 35, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 35, "h_ff": 5}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"ts":13, "act": "state_update", "state_id": 36, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [31, "movewithbox box roomb roomc doorc shakey", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "movewithbox box roomb roomc doorc shakey"}
+{"ts":13, "act": "state_update", "state_id": 36, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 36, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 36, "h_ff": 4}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"ts":13, "act": "state_update", "state_id": 37, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [31, "push_box_to_light_switch box light_switchb roomb shakey", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "push_box_to_light_switch box light_switchb roomb shakey"}
+{"ts":13, "act": "state_update", "state_id": 37, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 37, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 37, "h_ff": 4}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"ts":13, "act": "state_update", "state_id": 38, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [31, "move roomb rooma shakey doora", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "move roomb rooma shakey doora"}
+{"ts":13, "act": "state_update", "state_id": 38, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 38, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 38, "h_ff": 5}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"ts":13, "act": "state_update", "state_id": 39, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [31, "move roomb roomc shakey doorb", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "move roomb roomc shakey doorb"}
+{"ts":13, "act": "state_update", "state_id": 39, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 39, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 39, "h_ff": 4}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "move roomb roomc shakey doorc"}
+{"ts":13, "act": "state_update", "state_id": 39, "g": 13, "real_g": 13}
+{"ts":13, "act": "state_update", "state_id": 40, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [31, "pickup_object gripperb objectb roomb shakey", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "pickup_object gripperb objectb roomb shakey"}
+{"ts":13, "act": "state_update", "state_id": 40, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 40, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 40, "h_ff": 3}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"ts":13, "act": "state_update", "state_id": 41, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "0(Atom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [31, "drop_object grippera objecta roomb shakey", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 31, "op": "drop_object grippera objecta roomb shakey"}
+{"ts":13, "act": "state_update", "state_id": 41, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 41, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 41, "h_ff": 5}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 40, "g": 13, "real_g": 13}
+{"ts": 14, "act": "expanded_states", "state_id": 40}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 42, "state": {"var0": "0(Atom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [40, "climbonbox box roomb shakey", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "climbonbox box roomb shakey"}
+{"ts":14, "act": "state_update", "state_id": 42, "g": -1, "real_g": -1}
+{"ts": 14, "act": "evaluated_states", "state_id": 42, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 42, "h_ff": 4}
+{"ts": 14, "act": "evaluated_heuristics", "count": 1}
+{"ts":14, "act": "state_update", "state_id": 43, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "0(Atom at-box(box, rooma))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [40, "movewithbox box roomb rooma doora shakey", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "movewithbox box roomb rooma doora shakey"}
+{"ts":14, "act": "state_update", "state_id": 43, "g": -1, "real_g": -1}
+{"ts": 14, "act": "evaluated_states", "state_id": 43, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 43, "h_ff": 4}
+{"ts": 14, "act": "evaluated_heuristics", "count": 1}
+{"ts":14, "act": "state_update", "state_id": 44, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [40, "movewithbox box roomb roomc doorc shakey", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "movewithbox box roomb roomc doorc shakey"}
+{"ts":14, "act": "state_update", "state_id": 44, "g": -1, "real_g": -1}
+{"ts": 14, "act": "evaluated_states", "state_id": 44, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 44, "h_ff": 2}
+{"ts": 14, "act": "evaluated_heuristics", "count": 1}
+{"ts":14, "act": "state_update", "state_id": 45, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "0(Atom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [40, "push_box_to_light_switch box light_switchb roomb shakey", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "push_box_to_light_switch box light_switchb roomb shakey"}
+{"ts":14, "act": "state_update", "state_id": 45, "g": -1, "real_g": -1}
+{"ts": 14, "act": "evaluated_states", "state_id": 45, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 45, "h_ff": 3}
+{"ts": 14, "act": "evaluated_heuristics", "count": 1}
+{"ts":14, "act": "state_update", "state_id": 46, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "0(Atom at-shakey(rooma))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [40, "move roomb rooma shakey doora", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "move roomb rooma shakey doora"}
+{"ts":14, "act": "state_update", "state_id": 46, "g": -1, "real_g": -1}
+{"ts": 14, "act": "evaluated_states", "state_id": 46, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 46, "h_ff": 4}
+{"ts": 14, "act": "evaluated_heuristics", "count": 1}
+{"ts":14, "act": "state_update", "state_id": 47, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [40, "move roomb roomc shakey doorb", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "move roomb roomc shakey doorb"}
+{"ts":14, "act": "state_update", "state_id": 47, "g": -1, "real_g": -1}
+{"ts": 14, "act": "evaluated_states", "state_id": 47, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 47, "h_ff": 2}
+{"ts": 14, "act": "evaluated_heuristics", "count": 1}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "move roomb roomc shakey doorc"}
+{"ts":14, "act": "state_update", "state_id": 47, "g": 14, "real_g": 14}
+{"ts":14, "act": "state_update", "state_id": 48, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "0(Atom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [40, "drop_object grippera objecta roomb shakey", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "drop_object grippera objecta roomb shakey"}
+{"ts":14, "act": "state_update", "state_id": 48, "g": -1, "real_g": -1}
+{"ts": 14, "act": "evaluated_states", "state_id": 48, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 48, "h_ff": 4}
+{"ts": 14, "act": "evaluated_heuristics", "count": 1}
+{"ts":14, "act": "state_update", "state_id": 31, "new_parent": [40, "drop_object gripperb objectb roomb shakey", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 40, "op": "drop_object gripperb objectb roomb shakey"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 44, "g": 14, "real_g": 14}
+{"ts": 15, "act": "expanded_states", "state_id": 44}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 49, "state": {"var0": "0(Atom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [44, "climbonbox box roomc shakey", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 44, "op": "climbonbox box roomc shakey"}
+{"ts":15, "act": "state_update", "state_id": 49, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 49, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 49, "h_ff": 3}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"ts":15, "act": "state_update", "state_id": 40, "new_parent": [44, "movewithbox box roomc roomb doorc shakey", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 44, "op": "movewithbox box roomc roomb doorc shakey"}
+{"ts":15, "act": "state_update", "state_id": 50, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "0(Atom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [44, "push_box_to_light_switch box light_switchc roomc shakey", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 44, "op": "push_box_to_light_switch box light_switchc roomc shakey"}
+{"ts":15, "act": "state_update", "state_id": 50, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 50, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 50, "h_ff": 2}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"ts":15, "act": "state_update", "state_id": 51, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [44, "move roomc roomb shakey doorb", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 44, "op": "move roomc roomb shakey doorb"}
+{"ts":15, "act": "state_update", "state_id": 51, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 51, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 51, "h_ff": 3}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"ts": 15, "act": "generated_states", "state_id": 44, "op": "move roomc roomb shakey doorc"}
+{"ts":15, "act": "state_update", "state_id": 51, "g": 15, "real_g": 15}
+{"ts":15, "act": "state_update", "state_id": 52, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "0(Atom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [44, "drop_object grippera objecta roomc shakey", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 44, "op": "drop_object grippera objecta roomc shakey"}
+{"ts":15, "act": "state_update", "state_id": 52, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 52, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 52, "h_ff": 1}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"ts":15, "act": "state_update", "state_id": 53, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "1(Atom gripper-holding(grippera, objecta))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "1(NegatedAtom at-object(objecta, roomc))", "var14": "0(Atom at-object(objectb, roomc))"}, "new_parent": [44, "drop_object gripperb objectb roomc shakey", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 44, "op": "drop_object gripperb objectb roomc shakey"}
+{"ts":15, "act": "state_update", "state_id": 53, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 53, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 53, "h_ff": 1}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 52, "g": 15, "real_g": 15}
+{"ts": 16, "act": "expanded_states", "state_id": 52}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 54, "state": {"var0": "0(Atom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "0(Atom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [52, "climbonbox box roomc shakey", 1]}
+{"ts": 16, "act": "generated_states", "state_id": 52, "op": "climbonbox box roomc shakey"}
+{"ts":16, "act": "state_update", "state_id": 54, "g": -1, "real_g": -1}
+{"ts": 16, "act": "evaluated_states", "state_id": 54, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 54, "h_ff": 2}
+{"ts": 16, "act": "evaluated_heuristics", "count": 1}
+{"ts":16, "act": "state_update", "state_id": 55, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "1(Atom at-box(box, roomb))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "0(Atom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [52, "movewithbox box roomc roomb doorc shakey", 1]}
+{"ts": 16, "act": "generated_states", "state_id": 52, "op": "movewithbox box roomc roomb doorc shakey"}
+{"ts":16, "act": "state_update", "state_id": 55, "g": -1, "real_g": -1}
+{"ts": 16, "act": "evaluated_states", "state_id": 55, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 55, "h_ff": 2}
+{"ts": 16, "act": "evaluated_heuristics", "count": 1}
+{"ts":16, "act": "state_update", "state_id": 56, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "0(Atom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "0(Atom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [52, "push_box_to_light_switch box light_switchc roomc shakey", 1]}
+{"ts": 16, "act": "generated_states", "state_id": 52, "op": "push_box_to_light_switch box light_switchc roomc shakey"}
+{"ts":16, "act": "state_update", "state_id": 56, "g": -1, "real_g": -1}
+{"ts": 16, "act": "evaluated_states", "state_id": 56, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 56, "h_ff": 1}
+{"ts": 16, "act": "evaluated_heuristics", "count": 1}
+{"ts":16, "act": "state_update", "state_id": 57, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "1(Atom at-shakey(roomb))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "2(Atom gripper-holding(gripperb, objectb))", "var13": "0(Atom at-object(objecta, roomc))", "var14": "1(NegatedAtom at-object(objectb, roomc))"}, "new_parent": [52, "move roomc roomb shakey doorb", 1]}
+{"ts": 16, "act": "generated_states", "state_id": 52, "op": "move roomc roomb shakey doorb"}
+{"ts":16, "act": "state_update", "state_id": 57, "g": -1, "real_g": -1}
+{"ts": 16, "act": "evaluated_states", "state_id": 57, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 57, "h_ff": 2}
+{"ts": 16, "act": "evaluated_heuristics", "count": 1}
+{"ts": 16, "act": "generated_states", "state_id": 52, "op": "move roomc roomb shakey doorc"}
+{"ts":16, "act": "state_update", "state_id": 57, "g": 16, "real_g": 16}
+{"ts":16, "act": "state_update", "state_id": 58, "state": {"var0": "1(NegatedAtom on-box(shakey))", "var1": "2(Atom at-box(box, roomc))", "var2": "2(Atom at-shakey(roomc))", "var3": "1(NegatedAtom is-box-at-ls(box, roomc))", "var4": "1(NegatedAtom is-light-on(roomc))", "var5": "1(NegatedAtom is-box-at-ls(box, roomb))", "var6": "0(Atom is-light-on(roomb))", "var7": "1(NegatedAtom is-box-at-ls(box, rooma))", "var8": "0(Atom is-light-on(rooma))", "var9": "1(NegatedAtom at-object(objecta, roomb))", "var10": "1(NegatedAtom at-object(objectb, rooma))", "var11": "0(Atom gripper-empty(grippera))", "var12": "0(Atom gripper-empty(gripperb))", "var13": "0(Atom at-object(objecta, roomc))", "var14": "0(Atom at-object(objectb, roomc))"}, "new_parent": [52, "drop_object gripperb objectb roomc shakey", 1]}
+{"ts": 16, "act": "generated_states", "state_id": 52, "op": "drop_object gripperb objectb roomc shakey"}
+{"ts":16, "act": "state_update", "state_id": 58, "g": -1, "real_g": -1}
+{"ts": 16, "act": "evaluated_states", "state_id": 58, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 58, "h_ff": 0}
+{"ts": 16, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 17}
+{"ts":17, "act": "state_update", "state_id": 58, "g": 16, "real_g": 16}
+{"ts": 17, "act": "expanded_states", "state_id": 58}
+{"act": "end_group"}
+{"ts": 17, "act": "plan_found", "state_ids": [0, 1, 5, 7, 10, 11, 12, 20, 22, 24, 25, 28, 31, 40, 44, 52, 58]}
